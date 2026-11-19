@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #10101d;
+  --card: #1c1b2d;
+  --text: #ffffff;
+  --accent: #9b7cff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+header h2 {
+  color: var(--accent);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+button, .btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 8%;
+  gap: 30px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 6vw, 65px);
+  margin: 15px 0;
+}
+
+.hero h2 {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.hero img {
+  width: 260px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 30px;
+  border: 3px solid var(--accent);
+}
+
+section:not(.hero) {
+  padding: 75px 10%;
+  text-align: center;
+}
+
+section h2 {
+  color: var(--accent);
+  margin-bottom: 25px;
+  font-size: 32px;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+#contactForm {
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  background: var(--card);
+  color: var(--text);
+}
+
+textarea {
+  min-height: 120px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: var(--card);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: 0.8s;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero img {
+    width: 200px;
+    height: 220px;
+  }
+}
